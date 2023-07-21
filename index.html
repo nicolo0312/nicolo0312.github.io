@@ -52,6 +52,7 @@
           <li><a class="nav-link" href="#about">Sobre mi</a></li>
           <li><a class="nav-link" href="#resume">Resumen</a></li>
           <li><a class="nav-link" href="#contact">Contacto</a></li>
+          <li><a class="nav-link" onclick="descargarPDF()" href="#contact">Descargar CV</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -158,6 +159,7 @@
           <li>Javascript</li>
           <li>React</li>
           <li>Apache - Nginx</li>
+          <li>GIT</li>
         </ul>
          <!-- <div class="progress">
             <span class="skill">HTML <i class="val">80%</i></span>
@@ -194,6 +196,7 @@
         <ul style="list-style-type: square; color:#18d26e">
     
           <li>NODEJS</li>
+          <li>PHP</li>
           <li>PYTHON</li>
           <li>SQL(MySQL - PgreSQL - Oracle)</li>
           <li>NOSQL (MongoDB - REDIS)</li>
@@ -815,8 +818,18 @@
   <script src="js/main2.js"></script>
 
   <script>
-    function downloadCV(){
-     //$.fileDownload("{{ route('export.cv') }}");
+function descargarPDF() {
+      // URL del archivo PDF que deseas descargar
+      var pdfUrl = "img/CV-NICO.pdf";
+
+      // Crear un enlace temporal
+      var link = document.createElement("a");
+      link.href = pdfUrl;
+      link.target = "_blank"; // Abre el PDF en una nueva pestaña/tab
+      link.download = "cv-nicolas-moran.pdf"; // Nombre del archivo al descargarlo
+
+      // Simular el clic en el enlace para iniciar la descarga
+      link.click();
     }
   </script>
 </body>
